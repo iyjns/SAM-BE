@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 <html>
 
 <head>
-    <title>A05 SAM-BE</title>
+    <title>W3.CSS Template</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -114,37 +114,36 @@ if ($conn->connect_error) {
     <!-- Fourth Grid: Contact -->
     <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px; background-color:#d03826 !important;">
         <div class="w3-padding-64">
-                <h1>Creation By</h1>
-            </div>
-            <div class="w3-padding-64">
-                <p>Priya Jeanelle Espedido</p>
-                <p>Sampaloc, Manila</p>
-                <p>+09 171570572</p>
-                <p>priyajeanelle@test.com</p>
-            </div>
+            <h1>Creation By</h1>
         </div>
-        <div id="contact" class="w3-half w3-container" style="height:700px; background-color:#de7e2a;">
-            <div class="w3-padding-64 w3-padding-large">
-                <h1>Contact</h1>
-                <p class="w3-opacity">GET IN TOUCH</p>
-                <form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
-                    <div class="w3-section">
-                        <label>Name</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="Name">
-                    </div>
-                    <div class="w3-section">
-                        <label>Email</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="Email">
-                    </div>
-                    <div class="w3-section">
-                        <label>Message</label>
-                        <input class="w3-input" style="width:100%;" type="text" required name="Message">
-                    </div>
-                    <button type="submit" class="w3-button w3-teal w3-right"
-                        style="background-color:#de7e2a;">Send</button>
-                </form>
-            </div>
+        <div class="w3-padding-64">
+            <p>Priya Jeanelle Espedido</p>
+            <p>Sampaloc, Manila</p>
+            <p>+09 171570572</p>
+            <p>priyajeanelle@test.com</p>
         </div>
+    </div>
+    <div id="contact" class="w3-half w3-container" style="height:700px; background-color:#de7e2a;">
+        <div class="w3-padding-64 w3-padding-large">
+            <h1>Contact</h1>
+            <p class="w3-opacity">GET IN TOUCH</p>
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>Name</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Name">
+                </div>
+                <div class="w3-section">
+                    <label>Email</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Email">
+                </div>
+                <div class="w3-section">
+                    <label>Message</label>
+                    <input class="w3-input" style="width:100%;" type="text" required name="Message">
+                </div>
+                <button type="submit" class="w3-button w3-teal w3-right" style="background-color:#de7e2a;">Send</button>
+            </form>
+        </div>
+    </div>
     </div>
 
     <!-- Footer -->
