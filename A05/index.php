@@ -1,12 +1,37 @@
 <?php
 include ("connect.php");
-?>
+function getIslandData($conn, $islandID)
+{
+    $islandData = [];
+    $query = "SELECT name, color FROM islandsofpersonality WHERE islandOfPersonalityID = $islandID";
+    $result = $conn->query($query);
 
+    if ($result->num_rows > 0) {
+        $islandData = $result->fetch_assoc();
+    }
+    return $islandData;
+}
+
+function getIslandContents($conn, $islandID)
+{
+    $contents = [];
+    $query = "SELECT content FROM islandcontents WHERE islandOfPersonalityID = $islandID";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $contents[] = $row['content'];
+        }
+    }
+    return $contents;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>Island of Personality</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,8 +39,7 @@ include ("connect.php");
 
 <body class="w3-content" style="max-width:1300px">
 
-    <!-- First Grid: Logo & About -->
-    <div class="w3-row">
+<div class="w3-row">
         <div class="w3-half w3-black w3-container w3-center" style="height:700px">
             <div class="w3-padding-64">
                 <h1>Island of Personality</h1>
@@ -43,67 +67,70 @@ include ("connect.php");
             </div>
         </div>
     </div>
-
-
-    <!-- Second Grid: My Family -->
-    <div class="w3-row">
-        <div class="w3-half w3-center" style="min-height:800px; background-color:#9597bd;" id="family">
+    
+    <class="w3-row">
+        <div class="w3-half w3-center" id="family" style="min-height:800px; background-color:#9597bd;">
+            <?php
+            $familyData = getIslandData($conn, 1);
+            $familyContents = getIslandContents($conn, 1);
+            ?>
             <div class="w3-padding-64">
-                <h2>My Family</h2>
-                <p>My family is my quiet sanctuary, a treasure I rarely share with others. They are my source of
-                    strength and joy, whose stories I hold close to my heart.</p>
-            </div>
-        </div>
-
-        <!-- Third Grid: Work -->
-        <div class="w3-half w3-center" style="min-height:800px; background-color:#85b8ed;" id="work">
-            <div class="w3-padding-64 w3-center">
-                <h2>Work</h2>
-                <p>A draft from my CV</p>
-                <div class="w3-container w3-responsive">
-                    <table class="w3-table">
-                        <tr>
-                            <th>Year</th>
-                            <th>Role</th>
-                            <th>Location</th>
-                        </tr>
-                        <tr>
-                            <td>2021</td>
-                            <td>SEO Specialist</td>
-                            <td>Australia</td>
-                        </tr>
-                        <tr>
-                            <td>2012-2016</td>
-                            <td>The rest is history..</td>
-                            <td>Lorem ipsum</td>
-                        </tr>
-                    </table>
+                <h2><?php echo $familyData['name']; ?></h2>
+                <div class="w3-container">
+                    <?php foreach ($familyContents as $content): ?>
+                        <p><?php echo htmlspecialchars($content); ?></p>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Fourth Grid: Hobby -->
-    <div class="w3-half w3-center" style="min-height:800px; background-color:#7ad5ce;" id="hobby">
-        <div class="w3-padding-64 w3-center">
-            <h2>Hobby</h2>
-            <p>I enjoy diving into the world of anime, with a special love for iconic characters like Gojo, while also
-                exploring creative outlets such as Violin, and Reading. My hobbies keep me inspired, offering a mix of
-                imagination, excitement, and self-expression.</p>
+        <div class="w3-half w3-center" id="work" style="min-height:800px; background-color:#85b8ed;">
+            <?php
+            $workData = getIslandData($conn, 2);
+            $workContents = getIslandContents($conn, 2);
+            ?>
+            <div class="w3-padding-64">
+                <h2><?php echo $workData['name']; ?></h2>
+                <div class="w3-container">
+                    <?php foreach ($workContents as $content): ?>
+                        <p><?php echo htmlspecialchars($content); ?></p>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Fourth Grid: Dream Place -->
-    <div class="w3-half w3-center" style="min-height:800px; background-color:#8ac664;" id="place">
-        <div class="w3-padding-64">
-            <h2>Dream Place</h2>
-            <p>I dream of visiting places that inspire creativity and serenity, where I can explore my love for anime,
-                music, and art while connecting with nature and culture.</p>
+        <div class="w3-half w3-center" id="hobby" style="min-height:800px; background-color:#7ad5ce;">
+            <?php
+            $hobbyData = getIslandData($conn, 3);
+            $hobbyContents = getIslandContents($conn, 3);
+            ?>
+            <div class="w3-padding-64">
+                <h2><?php echo $hobbyData['name']; ?></h2>
+                <div class="w3-container">
+                    <?php foreach ($hobbyContents as $content): ?>
+                        <p><?php echo htmlspecialchars($content); ?></p>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Fourth Grid: Contact -->
-    <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px; background-color:#d03826 !important;">
+        <div class="w3-half w3-center" id="place" style="min-height:800px; background-color:#8ac664;">
+            <?php
+            $placeData = getIslandData($conn, 4);
+            $placeContents = getIslandContents($conn, 4);
+            ?>
+            <div class="w3-padding-64">
+                <h2><?php echo $placeData['name']; ?></h2>
+                <div class="w3-container">
+                    <?php foreach ($placeContents as $content): ?>
+                        <p><?php echo htmlspecialchars($content); ?></p>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px; background-color:#d03826 !important;">
         <div class="w3-padding-64">
             <h1>Creation By</h1>
         </div>
@@ -141,7 +168,6 @@ include ("connect.php");
     <footer class="w3-container w3-black w3-padding-16">
         <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Priya@w3.css</a></p>
     </footer>
-
 </body>
 
 </html>
