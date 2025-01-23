@@ -5,320 +5,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Olympic Spirit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            gap: 2rem;
-        }
-
-        .logo {
-            font-size: 1.7rem;
-            font-weight: 700;
-        }
-
-        nav {
-            display: flex;
-        }
-
-        nav a:not(:last-child) {
-            margin-right: 1.5rem;
-        }
-
-        nav a {
-            font-weight: 600;
-            text-decoration: none;
-            color: #333;
-        }
-
-        main {
-            padding: 4rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f8f9fb;
-            height: 400px;
-        }
-
-        .text-container {
-            max-width: 40%;
-            padding: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-left: 5%;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #000;
-            font-weight: 700;
-        }
-
-        p {
-            color: #666;
-            font-size: 1.2rem;
-        }
-
-        .button {
-            background-color: #000;
-            color: #fff;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .placeholder-image {
-            width: 800px;
-            height: 400px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            position: relative;
-            left: -10%;
-        }
-
-        .section {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin: 4rem auto 2rem;
-            padding-bottom: 2.5rem;
-        }
-
-        .section-item {
-            width: 18%;
-            text-align: center;
-            padding: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section-item i,
-        .section-item .material-icons {
-            font-size: 2.5rem;
-            color: #000;
-            margin-bottom: 0.5rem;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-top: 2rem;
-        }
-
-        .featured-stories-section {
-            text-align: center;
-            margin-bottom: 3rem;
-            background-color: #f8f9fb;
-        }
-
-        .featured-stories {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            margin: 0 auto;
-            padding: 0 5%;
-            padding-bottom: 6rem;
-        }
-
-        .featured-story {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem;
-        }
-
-        .featured-story h3,
-        .featured-story p {
-            text-align: left;
-            margin-left: 0;
-        }
-
-        .featured-stories-section h2 {
-            text-align: left;
-            margin-bottom: 2rem;
-            margin-left: 6rem;
-        }
-
-        .featured-story h3 {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            color: #000;
-        }
-
-
-        .featured-story p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        footer {
-            background-color: #f0f0f0;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        footer {
-            background-color: #f0f0f0;
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1000px;
-            width: 100%;
-            padding-left: 8rem;
-        }
-
-        footer .column {
-            text-align: left;
-            flex: 1;
-        }
-
-        footer h3 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #333;
-            margin: 0 0 1rem 0;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer li {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        footer li::before {
-            content: "\25CF";
-            font-size: 0.5rem;
-            color: #000;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">OLYMPICS</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="news.html">News</a>
-            <a href="about.html">About</a>
-        </nav>
+    <header class="bg-white shadow-sm py-3">
+        <div class="container d-flex align-items-center gap-4">
+            <div class="logo fs-4 fw-bold">OLYMPICS</div>
+            <nav class="d-flex">
+                <a href="index.html" class="text-decoration-none text-dark me-3">Home</a>
+                <a href="news.html" class="text-decoration-none text-dark me-3">News</a>
+                <a href="about.html" class="text-decoration-none text-dark">About</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <div class="text-container">
-            <h1>The Olympic Spirit</h1>
-            <p>Experience the greatest sporting event in the world</p>
-            <button class="button">Explore Games</button>
+    <main class="bg-light py-5">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <div class="text-container mb-4 mb-md-0">
+                <h1 class="display-4 fw-bold">The Olympic Spirit</h1>
+                <p class="text-secondary fs-5">Experience the greatest sporting event in the world</p>
+                <button class="btn btn-dark mt-3">Explore Games</button>
+            </div>
+            <div class="placeholder-image bg-secondary rounded" style="width: 100%; max-width: 800px; height: 400px;"></div>
         </div>
-        <div class="placeholder-image"></div>
     </main>
 
-    <div class="section">
-        <div class="section-item">
-            <span class="material-icons">event</span>
-            <p>Event Schedule</p>
-        </div>
-        <div class="section-item">
-            <span class="material-icons">emoji_events</span>
-            <p>Medal Count</p>
-        </div>
-        <div class="section-item">
-            <span class="material-icons">person</span>
-            <p>Athletes</p>
-        </div>
-        <div class="section-item">
-            <span class="material-icons">article</span>
-            <p>Latest News</p>
-        </div>
-    </div>
-
-    <div class="featured-stories-section">
-        <h2>Featured Stories</h2>
-        <div class="featured-stories">
-            <div class="featured-story">
-                <div style="width: 100%; height: 200px; background-color: #e0e0e0; border-radius: 5px;"></div>
-                <h3>Featured Story Title</h3>
-                <p>Brief description of the featured story goes here.</p>
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <span class="material-icons fs-1 text-dark">event</span>
+                    <p class="mt-2">Event Schedule</p>
+                </div>
             </div>
-            <div class="featured-story">
-                <div style="width: 100%; height: 200px; background-color: #e0e0e0; border-radius: 5px;"></div>
-                <h3>Featured Story Title</h3>
-                <p>Brief description of the featured story goes here.</p>
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <span class="material-icons fs-1 text-dark">emoji_events</span>
+                    <p class="mt-2">Medal Count</p>
+                </div>
             </div>
-            <div class="featured-story">
-                <div style="width: 100%; height: 200px; background-color: #e0e0e0; border-radius: 5px;"></div>
-                <h3>Featured Story Title</h3>
-                <p>Brief description of the featured story goes here.</p>
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <span class="material-icons fs-1 text-dark">person</span>
+                    <p class="mt-2">Athletes</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <span class="material-icons fs-1 text-dark">article</span>
+                    <p class="mt-2">Latest News</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="column">
-                <h3>About</h3>
-                <ul>
+    <div class="bg-light py-5">
+        <div class="container">
+            <h2 class="mb-4">Featured Stories</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 bg-white shadow-sm rounded">
+                        <div class="bg-secondary rounded" style="width: 100%; height: 200px;"></div>
+                        <h3 class="mt-3">Featured Story Title</h3>
+                        <p>Brief description of the featured story goes here.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-white shadow-sm rounded">
+                        <div class="bg-secondary rounded" style="width: 100%; height: 200px;"></div>
+                        <h3 class="mt-3">Featured Story Title</h3>
+                        <p>Brief description of the featured story goes here.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-white shadow-sm rounded">
+                        <div class="bg-secondary rounded" style="width: 100%; height: 200px;"></div>
+                        <h3 class="mt-3">Featured Story Title</h3>
+                        <p>Brief description of the featured story goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <div class="column mb-3 mb-md-0">
+                <h3 class="fs-5">About</h3>
+                <ul class="list-unstyled">
                     <li>History</li>
                     <li>Values</li>
                     <li>Organization</li>
                 </ul>
             </div>
-            <div class="column">
-                <h3>Games</h3>
-                <ul>
+            <div class="column mb-3 mb-md-0">
+                <h3 class="fs-5">Games</h3>
+                <ul class="list-unstyled">
                     <li>Summer Olympics</li>
                     <li>Winter Olympics</li>
                     <li>Youth Olympics</li>
                 </ul>
             </div>
             <div class="column">
-                <h3>Connect</h3>
-                <ul>
+                <h3 class="fs-5">Connect</h3>
+                <ul class="list-unstyled">
                     <li>Contact</li>
                     <li>Social Media</li>
                     <li>Newsletter</li>
@@ -327,6 +120,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
